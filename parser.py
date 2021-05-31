@@ -257,7 +257,7 @@ def change_date(dtime):
     return new_date
 
 
-'''
+
 in_table('main_head', main_head) #Записываем заголовки на главную таблицу
 
 creat_list('clients') #Вызываем функции по созданию вкладок
@@ -283,7 +283,7 @@ in_table('attachments', attachments)#Записываем заголовки в 
 
 creat_list('custom_fields') #Вызываем функции по созданию вкладок
 in_table('custom_fields', custom_fields)#Записываем заголовки в таблицу на созданную вкладку
-'''
+
 
 dat_str = ['modified_at', 'done_at', 'created_at', 'closed_at', 'warranty_date', 'estimated_done_at']
 for page in range(1,1000): #Перебираем страницы с пагинацией
@@ -301,18 +301,18 @@ for page in range(1,1000): #Перебираем страницы с пагин�
             attachments_n = [dict_n['id']]
             custom_fields_n = [dict_n['id']]
 
-            #for i in main_head:
-            #if i in dat_str:
-            #if i in dict_n:
-            #main_head_n.append(change_date(dict_n[i]))
-            #else:
-            #main_head_n.append('')
-            #else:
-            #if i in dict_n:
-            #main_head_n.append(dict_n[i])
-            #else:
-            #main_head_n.append('')
-            #in_table('main_head', main_head_n)
+            for i in main_head:
+                if i in dat_str:
+                    if i in dict_n:
+                        main_head_n.append(change_date(dict_n[i]))
+                    else:
+                        main_head_n.append('')
+                else:
+                    if i in dict_n:
+                        main_head_n.append(dict_n[i])
+                    else:
+                        main_head_n.append('')
+            in_table('main_head', main_head_n)
 
             for i in client[1:]:#Перебираем заголовки таблицы
                 if i in dat_str: #Проверияем, заголовок на тип даты
