@@ -329,7 +329,7 @@ for page in range(1,1000): #Перебираем страницы с пагин�
                             client_n.append('')
             in_table('clients', client_n)
         
-            for i in ad_campaign[1:]:
+            for i in ad_campaign[1:]:#Перебираем заголовки таблицы
                 if i in dat_str:
                     if 'ad_campaign' in dict_n:
                         if i in dict_n['ad_campaign']:
