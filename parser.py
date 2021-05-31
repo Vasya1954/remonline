@@ -7,7 +7,7 @@ import datetime
 import time
 
 def get_token(): #Получаем токен для запросов
-    url = 'https://api.remonline.ru/token/new?api_key=9080ece1eab046aab9838f28183cc3fb'
+    url = 'https://api.remonline.ru/token/new?api_key='
     change_token = requests.get(url)
     change_token = change_token.json
     return change_token()['token']
